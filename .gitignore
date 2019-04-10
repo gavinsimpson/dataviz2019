@@ -1,3 +1,9 @@
+# ignore large files
+01-introduction/introduction.pdf
+02-making-a-plot/making-a-plot.pdf
+/*/video/*
+other-images/*
+
 # History files
 .Rhistory
 .Rapp.history
