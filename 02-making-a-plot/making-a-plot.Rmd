@@ -16,8 +16,9 @@ output:
     css: [default, 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', '../my.css']
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, cache = FALSE}
 options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(cache = TRUE)
 library('ggplot2')
 library('dplyr')
 library('tidyr')
@@ -378,6 +379,41 @@ background-size: cover
 
 
 **Create a scatterplot of *population* and *per captia GDP***
+
+---
+
+# Previously on…
+
+* *ggplot* provides a set of tools to
+    * map data to visual elements
+    * specify the kind of plot
+    * control fine details of the plot
+* A *ggplot* comprises several elements
+    1. Data — via the `data` argument
+    2. Aesthetic mappings — via the `aes()` argument
+    3. Geometric objects or *geoms*
+    4. Coordinates & scales
+    5. Labels & Guides
+* Preparing data — **tidy** or **long** data not **wide**
+* Created our first plot
+
+---
+
+# Previously on…
+
+```{r recap-code, fig.show = 'hide', cache = FALSE}
+library('gapminder')
+library('ggplot2')
+
+p <- ggplot(data = gapminder,
+            mapping = aes(x = gdpPercap, y = lifeExp))
+
+p + geom_point()
+
+ggplot(data = gapminder,
+       mapping = aes(x = gdpPercap, y = lifeExp)) +
+    geom_point()
+```
 
 ---
 

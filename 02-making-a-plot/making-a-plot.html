@@ -16,7 +16,6 @@ class: center, middle, inverse, title-slide
 # Making a plot
 ## Data Visualisation mini-course
 ### Gavin L. Simpson
-### Institute of Environmental Change and Society
 ### 07/04/2019
 
 ---
@@ -409,6 +408,44 @@ background-size: cover
 
 
 **Create a scatterplot of *population* and *per captia GDP***
+
+---
+
+# Previously on…
+
+* *ggplot* provides a set of tools to
+    * map data to visual elements
+    * specify the kind of plot
+    * control fine details of the plot
+* A *ggplot* comprises several elements
+    1. Data — via the `data` argument
+    2. Aesthetic mappings — via the `aes()` argument
+    3. Geometric objects or *geoms*
+    4. Coordinates &amp; scales
+    5. Labels &amp; Guides
+* Preparing data — **tidy** or **long** data not **wide**
+* Created our first plot
+
+---
+
+# Previously on…
+
+
+```r
+library('gapminder')
+library('ggplot2')
+
+p &lt;- ggplot(data = gapminder,
+            mapping = aes(x = gdpPercap, y = lifeExp))
+
+p + geom_point()
+```
+
+```r
+ggplot(data = gapminder,
+       mapping = aes(x = gdpPercap, y = lifeExp)) +
+    geom_point()
+```
 
 ---
 
